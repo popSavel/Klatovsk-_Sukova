@@ -1,6 +1,7 @@
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
@@ -255,6 +256,11 @@ public class DrawingPanel extends JPanel {
 		
 		drawPruhy(g2);
 		
+		g2.setFont(new Font("Calibri", Font.PLAIN, 15));
+		g2.setColor(Color.BLACK);
+		String s = "Autoøi: David Šavel a Kryštof Šaml";
+		g2.drawString(s, this.getWidth()-220, this.getHeight()-10);
+		
 	}
 
 	private void setTrafficLights(Graphics2D g2, TrafficLight[] carTL, TrafficLight2[] pedestTL) {
@@ -445,6 +451,19 @@ public class DrawingPanel extends JPanel {
 		g2.drawLine(2 * this.getWidth()/3 - step - step2/2, 2 * this.getHeight()/ 3 + this.getHeight()/4 + 2 * stranaY, 2 * this.getWidth()/3 - step - step2/2 + stranaX, 2 * this.getHeight()/ 3 + this.getHeight()/4 + stranaY);
 		g2.drawLine(2 * this.getWidth()/3 - step - step2/2 + stranaX, 2 * this.getHeight()/ 3 + this.getHeight()/4 + 2 * stranaY, 2 * this.getWidth()/3 - step - step2/2 + stranaX, 2 * this.getHeight()/ 3 + this.getHeight()/4 + stranaY);
 		g2.drawLine(2 * this.getWidth()/3 - step - step2/2,  2 * this.getHeight()/ 3 + this.getHeight()/4 + stranaY, 2 * this.getWidth()/3 - step - step2/2 + stranaX,  2 * this.getHeight()/ 3 + this.getHeight()/4 + stranaY);
+		
+		/* legenda */
+		g2.setColor(Color.BLACK);
+		g2.drawLine(this.getWidth()/6 - 75, this.getHeight()/6, this.getWidth()/6 + 75, this.getHeight()/6);
+		g2.drawLine(this.getWidth()/6, this.getHeight()/6 - 75, this.getWidth()/6, this.getHeight()/6 + 75);
+		
+		g2.setFont(new Font("Calibri", Font.PLAIN, 15));
+		g2.setColor(Color.BLACK);
+		g2.drawString("centrum",this.getWidth()/6 + 25 , this.getHeight()/6 - 10);
+		g2.drawString("Litice",this.getWidth()/6 - 75 , this.getHeight()/6 - 10);
+		g2.drawString("Area Bory",this.getWidth()/6 -25 , this.getHeight()/6 - 80);
+		g2.drawString("Slovany",this.getWidth()/6 -25 , this.getHeight()/6 + 85);
+		
 	}
 
 }
